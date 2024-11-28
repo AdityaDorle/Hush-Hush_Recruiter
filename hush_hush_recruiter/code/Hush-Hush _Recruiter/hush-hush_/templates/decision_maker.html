@@ -1,0 +1,42 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decision Maker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="header">
+        <h1>Decision Maker</h1>
+    </div>
+
+    <!-- Decision maker gives out demands to Hiring Manager -->
+    <div class="content">
+        <h2>Mention the hiring demands</h2>
+        <form action="/decision_maker" method="post" id="demandForm">
+            <div>
+                <label for="developer_count">Number of Developers:</label>
+                <input type="number" id="developer_count" name="developer_count" min="0">
+            </div>
+            <button type="submit">Submit Demands</button>
+        </form>
+    </div>
+
+    <!-- Receives candidates details to be selected -->
+    <div class="links">
+        <a href="/candidate_personal_details">Candidate Personal Details</a>
+        <a href="/hiring_results">Hiring Results</a>
+        
+    </div>
+</body>
+</html>
+
+
+
+
+
+

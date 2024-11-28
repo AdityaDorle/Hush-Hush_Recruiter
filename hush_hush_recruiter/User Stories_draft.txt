@@ -1,0 +1,33 @@
+
+1. Who? 
+   Decision Maker
+   What?
+     - As a decision maker, I need to determine the company's hiring demand by job role, which can then be communicated to the hiring manager.
+     - As a decision maker, I would like to access candidate's details, such as resumes, personal information, and feedback.
+   Uses:
+     - This reduces the workload on existing employees and ensures the project runs smoothly.
+     - I can select candidates according to their qualifications in an unbiased way.
+
+2. Who? 
+   Hiring Manager
+   What?
+     - As a hiring manager, I would like to understand the hiring requirements received from the decision maker about available positions in the company.
+     - As a hiring manager, I would like to confirm the slot selections made by candidates for the coding contest.
+     - As a hiring manager, I would like to review coding questions.
+     - As a hiring manager, I would like to have admin access to modify and overwrite candidate credentials if necessary.
+   Uses:
+     - I can understand what constraints to put in software, facilitating the pre-filtering of candidates.
+     - This ensures slot selections do not overlap in case of ambiguity.
+     - Candidates are not only judged based on their solutions to coding questions but also on their algorithms.
+     - In case of forgotten credentials, I can reset everything.
+
+3. Who? Candidate
+   What?
+     - As a candidate, I would like to view credentials to access the login portal.
+     - As a candidate, I would like to understand the permissions required to upload details on the portal.
+     - As a candidate, I should be able to book interview slots.
+   Uses:
+     - For the selection process to begin, each candidate profile should exist in the database with a unique user ID.
+     - During the selection process, the authenticity of the candidate needs to be verified.
+     - Candidates should be able to view available slots and book them.
+

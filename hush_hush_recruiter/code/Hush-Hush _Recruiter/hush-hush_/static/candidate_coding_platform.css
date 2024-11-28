@@ -1,0 +1,7 @@
+.header h1 {
+    color: white; 
+}
+
+button[type="submit"]:hover {
+    background-color: #28a745; 
+}

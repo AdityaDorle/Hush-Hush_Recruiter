@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiring Demands sent by Decision Maker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        .demand {
+            margin-bottom: 20px;
+        }
+        .links a {
+            display: block; 
+            margin-bottom: 5px; 
+        }
+        .email-link {
+            color: blue; 
+            text-decoration: underline; 
+        }
+    </style>
+</head>
+<body>
+
+<!-- Requirements sent by decision maker are visible to Hiring Manager -->
+<div class="container">
+    <h1 class="title">Hiring Demands sent by Decision Maker</h1>
+    <div class="demand">
+        <strong>Number of Developers Required:</strong>
+        <span id="developer_count">{{ developer_count }}</span>
+    </div>
+
+    <!-- Github fetched candidates -->
+    <h2>GitHub Developers (Developer G)</h2>
+    <table>
+        <tr>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Followers</th>
+            <th>Number of Repos</th>
+            <th>Stars</th>
+            <th>Forks</th>
+            <th>Pull Number</th>
+            <th>Unique ID</th>
+            <th>Predicted Probability</th>
+        </tr>
+        {% for developer in developer_g %}
+        <tr>
+            <td>{{ developer.username }}</td>
+            <td>
+                <a href="mailto:{{ developer.email }}?subject=Coding Interview Invitation&body=Dear candidate, you are selected for hush hush coding interview.%0D%0A%0D%0AThe link for coding platform is: <a href='{http://127.0.0.1:5000}'>{http://127.0.0.1:5000}</a>.%0D%0A%0D%0APlease upload your resume in the below link:%0D%0A<a href='{https://drive.google.com/drive/folders/1T7VQZVAxKz2mzh3zDtVRsuRYSeW5lGZW?usp=sharing}'>{https://drive.google.com/drive/folders/1T7VQZVAxKz2mzh3zDtVRsuRYSeW5lGZW?usp=sharing}</a>.%0D%0A" class="email-link">{{ developer.email }}</a>
+            </td>
+            <td>{{ developer.followers }}</td>
+            <td>{{ developer.number_of_repos }}</td>
+            <td>{{ developer.stars }}</td>
+            <td>{{ developer.forks }}</td>
+            <td>{{ developer.pull_number }}</td>
+            <td>{{ developer.unique_id }}</td>
+            <td>{{ '%.2f' | format(developer.predicted_probability) }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <!-- Stack overflow fetched candidates -->
+    <h2>Stack Overflow Developers (Developer S)</h2>
+    <table>
+        <tr>
+            <th>Display Name</th>
+            <th>Reputation</th>
+            <th>Gold Badges</th>
+            <th>Silver Badges</th>
+            <th>ID Number</th>
+            <th>Email</th>
+            <th>Predicted Category</th>
+            <th>Probability Good</th>
+        </tr>
+        {% for developer in developer_s %}
+        <tr>
+            <td>{{ developer.display_name }}</td>
+            <td>{{ developer.reputation }}</td>
+            <td>{{ developer.gold_badges }}</td>
+            <td>{{ developer.silver_badges }}</td>
+            <td>{{ developer.id_number }}</td>
+            <td>
+                <a href="mailto:{{ developer.email }}?subject=Coding Interview Invitation&body=Dear candidate, you are selected for hush hush coding interview.%0D%0A%0D%0AThe link for coding platform is: <a href='{http://127.0.0.1:5000}'>{http://127.0.0.1:5000}</a>.%0D%0A%0D%0APlease upload your resume in the below link:%0D%0A<a href='{https://drive.google.com/drive/folders/1T7VQZVAxKz2mzh3zDtVRsuRYSeW5lGZW?usp=sharing}'>{https://drive.google.com/drive/folders/1T7VQZVAxKz2mzh3zDtVRsuRYSeW5lGZW?usp=sharing}</a>.%0D%0A" class="email-link">{{ developer.email }}</a>
+            </td>            <td>{{ developer.predicted_category }}</td>
+            <td>{{ '%.2f' | format(developer.probability_good) }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <div class="links">
+        <a href="/coding_solutions">Coding Solutions</a>
+    </div>
+</div>
+</body>
+</html>

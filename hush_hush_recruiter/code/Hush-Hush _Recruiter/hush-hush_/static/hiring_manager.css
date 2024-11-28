@@ -1,0 +1,27 @@
+.header h1 {
+    color: white; 
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;  
+}
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0ea; 
+    background-image: url('/static/bg.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); 
+    border-radius: 10px; 
+}
+
+

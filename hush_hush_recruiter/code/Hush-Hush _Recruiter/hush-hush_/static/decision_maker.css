@@ -1,0 +1,131 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0ea; 
+    background-image: url('/static/bg.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+}
+
+.header {
+    color: #ddd;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+    html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0ea; 
+    background-image: url('/static/bg.jpg');
+    background-size: cover;
+    background-position: center; 
+}
+
+.header {
+    color: white;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+
+
+.content {
+    background-color: rgba(255, 255, 255, 0.8); 
+    padding: 50px;
+    border-radius: 30px;
+    max-width: 500px;
+    margin: 20px auto; 
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 10px;
+}
+
+input[type="number"], button[type="submit"] {
+    padding: 10px;
+    margin-bottom: 20px; 
+    border-radius: 5px;
+    border: 1px solid #ddd; 
+    width: 100%;
+}
+
+button[type="submit"] {
+    background-color: #4CAF50; 
+    color: white; 
+    border: none;
+    cursor: pointer;
+}
+
+
+.links {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.links a {
+    text-decoration: none;
+    color: #007bff; 
+    margin: 0 10px;
+    display: inline-block; 
+
+.links br {
+    margin-bottom: 20px; 
+}
+
+}
+
+.content {
+    background-color: rgba(255, 255, 255, 0.8); 
+    padding: 50px;
+    border-radius: 30px;
+    max-width: 500px; 
+    margin: 20px auto; 
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 10px;
+}
+
+input[type="number"], button[type="submit"] {
+    padding: 10px;
+    margin-bottom: 20px; 
+    border-radius: 5px;
+    border: 1px solid #ddd; 
+    width: 100%;
+}
+
+button[type="submit"] {
+    background-color: #767977; 
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.links {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.links a {
+    text-decoration: none;
+    color: #eff0f1; 
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.links br {
+    margin-bottom: 20px; 
+}

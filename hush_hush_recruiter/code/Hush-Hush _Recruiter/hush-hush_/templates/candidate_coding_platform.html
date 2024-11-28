@@ -1,0 +1,104 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidate Coding Platform</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='candidate_coding_platform.css') }}">
+</head>
+<body>
+
+    <!-- Display 3 static questions for the candidates -->
+    <h1>Code Submission Form</h1>
+    <p>
+        Please submit your solutions for the coding challenges below:
+        <br>1. Write a Python function to calculate the factorial of a non-negative integer n.
+        <br>2. Implement a Python generator function that generates the Fibonacci sequence up to a given limit n.
+        <br>3. Write a Python function to find the maximum element in a list.
+    </p>
+    <form action="/candidate_coding_platform" method="post" id="codingForm">
+        <label input="name"> name</label>
+        <input type="text" id="name" name="name" required>
+        <br><br>
+        <label input="email"> email</label>
+        <input type="email" id="email" name="email" required>
+        <br><br>
+        <p id="question1">Solution 1:</p>
+        <textarea name="textarea1" rows="10" cols="80" id="textarea1" class="solution-textarea" placeholder="Enter code here..."></textarea>
+        
+        <p id="question2">Solution 2:</p>
+        <textarea name="textarea2" rows="10" cols="80" id="textarea2" class="solution-textarea" placeholder="Enter code here..."></textarea>
+        
+        <p id="question3">Solution 3:</p>
+        <textarea name="textarea3" rows="10" cols="80" id="textarea3" class="solution-textarea" placeholder="Enter code here..."></textarea>
+        
+        <button type="submit" id="CodeSubmit" disabled>Submit</button>
+    </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const submitBtn = document.getElementById('CodeSubmit');
+            const textareas = document.querySelectorAll('.solution-textarea');
+
+            // If textarea is empty, button stays disabled  
+            function checkContent() {
+                let isAnyFilled = false;
+                textareas.forEach(textarea => {
+                    if (textarea.value.trim() !== '' && textarea.value.trim() !== 'Enter code here...') {
+                        isAnyFilled = true;
+                    }
+                });
+                submitBtn.disabled = !isAnyFilled;
+            }
+
+            textareas.forEach(textarea => {
+                textarea.addEventListener('keyup', checkContent);
+                textarea.addEventListener('focus', function() {
+                    if (this.value.trim() === 'Enter code here...') {
+                        this.value = '';
+                    }
+                });
+                textarea.addEventListener('blur', function() {
+                    if (this.value.trim() === '') {
+                        this.value = 'Enter code here...';
+                    }
+                });
+            });
+
+
+
+
+
+
+
+            // Getting and setting the values in textareas and submitting the form
+            document.getElementById('codingForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                const formData = new FormData(this);
+                const solution1 = formData.get('textarea1');
+                const solution2 = formData.get('textarea2');
+                const solution3 = formData.get('textarea3');
+
+                document.getElementById('textarea1').value = solution1;
+                document.getElementById('textarea2').value = solution2;
+                document.getElementById('textarea3').value = solution3;
+
+                this.submit();
+            });
+
+
+
+
+
+            checkContent(); 
+        });
+    </script>
+</body>
+</html>
+
+
+
